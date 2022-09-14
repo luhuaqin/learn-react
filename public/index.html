@@ -25,7 +25,7 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>Search Github Users</title>
+    <title>router</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -40,5 +40,33 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script>
+      async function async1() {
+          console.log('async1 start')
+          await async2()
+          console.log('async1 end')
+      }
+
+      async function async2() {
+          console.log('async2')
+      }
+
+      console.log('script start')
+
+      setTimeout(function () {
+          console.log('settimeout')
+      })
+
+      async1()
+
+      new Promise(function (resolve) {
+          console.log('promise1')
+          resolve()
+      }).then(function () {
+          console.log('promise2')
+      })
+
+      console.log('script end')
+    </script>
   </body>
 </html>
