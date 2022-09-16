@@ -80,9 +80,9 @@ export default function App() {
 
 ## 多极路由路径刷新页面样式丢失的问题
 
-1、public/index.html 中引入css文件不写 ./相对路径，直接写 / (常用)
-2、public/index.html 中引入css文件不写 ./ 写 %PUBLIC_URL%/
-3、将BrowserRouter换成HashRouter
+1. public/index.html 中引入css文件不写 ./相对路径，直接写 / (常用)
+2. public/index.html 中引入css文件不写 ./ 写 %PUBLIC_URL%/
+3. 将BrowserRouter换成HashRouter
 
 ## 路由模糊匹配及精准匹配exact
 
@@ -106,7 +106,7 @@ Route中默认使用模糊匹配，输入路径包含匹配的路径且顺序一
 ## 嵌套路由
 
 在已配置路由的组件内使用路由，成为子路由，子路由path需要包含上一级路由的名称，否自匹配不到
-如在home组件中嵌套子路由
+>如在home组件中嵌套子路由
 
 ```javascript
 import React from 'react'
@@ -134,9 +134,9 @@ export default function Home(props) {
 
 ### 路由携带参数之params
 
-路由链接携带参数，<Link to={`/home/message/detail/${id}/${title}`}>详情</Link>
-注册路由接收参数，<Route path='/home/message/detail/:detailId/:title' component={Detail} />
-Detail组件接收参数：const { detailId, title } = props.match.params
+>路由链接携带参数，`<Link to={`/home/message/detail/${id}/${title}`}>详情</Link>`
+>注册路由接收参数，`<Route path='/home/message/detail/:detailId/:title' component={Detail} />`
+>Detail组件接收参数：const { detailId, title } = props.match.params
 
 ```javascript
 import React, { useState } from 'react'
@@ -169,9 +169,9 @@ export default function Message() {
 
 ### 路由携带参数之search(query)
 
-路由链接携带参数，<Link to={`/home/message/detail?id=${item.id}&title=${item.title}`}>详情</Link>
-注册路由接收参数，<Route path='/home/message/detail' component={Detail} />
-Detail组件接收参数：const result = props.location.search  接收到的search是字符串，需要借助querystring解析为对象
+>路由链接携带参数，`<Link to={`/home/message/detail?id=${item.id}&title=${item.title}`}>详情</Link>`
+>注册路由接收参数，`<Route path='/home/message/detail' component={Detail} />`
+>Detail组件接收参数：const result = props.location.search  接收到的search是字符串，需要借助querystring解析为对象
 
 ```javascript
 import React, { useState } from 'react'
@@ -204,9 +204,9 @@ export default function Message() {
 
 ### 路由携带参数之state(body)
 
-路由链接携带参数，<Link to={{ pathname: '/home/message/detail', state: {id: item.id, title: item.title} }}}>详情</Link>
-注册路由接收参数，<Route path='/home/message/detail' component={Detail} />
-Detail组件接收参数：const {id, title} = props.location.state
+>路由链接携带参数，`<Link to={{ pathname: '/home/message/detail', state: {id: item.id, title: item.title} }}}>详情</Link>`
+>注册路由接收参数，`<Route path='/home/message/detail' component={Detail} />`
+>Detail组件接收参数：const {id, title} = props.location.state
 
 ```javascript
 import React, { useState } from 'react'
@@ -240,29 +240,30 @@ export default function Message() {
 
 ## 路由跳转的两种模式
 
-1、push：push模式相当于将每个路径都压入栈中，有history
-2、replace： replace是用目标路径替换原来路径，没有history
-默认使用push模式，如果要开启replace模式，在Link中使用replace属性即可 <Link replace to='/home'>首页</Link>
+1. push：push模式相当于将每个路径都压入栈中，有history
+2. replace： replace是用目标路径替换原来路径，没有history
+
+>默认使用push模式，如果要开启replace模式，在Link中使用replace属性即可 <Link replace to='/home'>首页</Link>
 
 ## 编程式导航
 
-触发事件的组件内使用props.history.push('路径')或者props.history.replace('路径')进行跳转
-携带参数跳转：
-1、params:
-    props.history.push(`/home/message/detail/${id}/${title}`)
-    props.history.replace(`/home/message/detail/${id}/${title}`)
-2、search(query)
-    props.history.push(`/home/message/detail?id=${id}&title=${title}`)
-    props.history.replace(`/home/message/detail?id=${id}&title=${title}`)
-3、state(body)
-    props.history.push(`/home/message/detail`, { id: id, title: title })
-    props.history.replace(`/home/message/detail`, { id: id, title: title })
+>触发事件的组件内使用props.history.push('路径')或者props.history.replace('路径')进行跳转
+>携带参数跳转：
+
+1. params:
+    >>props.history.push(`/home/message/detail/${id}/${title}`)
+    >>props.history.replace(`/home/message/detail/${id}/${title}`)
+2. search(query)
+    >>props.history.push(`/home/message/detail?id=${id}&title=${title}`)
+    >>props.history.replace(`/home/message/detail?id=${id}&title=${title}`)
+3. state(body)
+    >>props.history.push(`/home/message/detail`, { id: id, title: title })
+    >>props.history.replace(`/home/message/detail`, { id: id, title: title })
 
 ## withRouter的使用
 
-在非路由组件中需要使用路由跳转的api时，需要借助withRouter完成
-
-使用方法：将组件用withRouter()包裹即可
+>在非路由组件中需要使用路由跳转的api时，需要借助withRouter完成
+>使用方法：将组件用withRouter()包裹即可
 
 ```javascript
 import React from 'react'
