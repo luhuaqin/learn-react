@@ -1,0 +1,28 @@
+{
+  "list": [
+    {
+      "id": 1,
+      "author": "luhuaqin",
+      "comment": "我瞎说的",
+      "time": "2022-09-24",
+      "attitude": 0,
+      "avatar": "https://avatars.githubusercontent.com/u/87929523?v=4"
+    },
+    {
+      "id": 2,
+      "author": "zhaojc",
+      "comment": "我也瞎说的",
+      "time": "2022-09-24",
+      "attitude": 0,
+      "avatar": "https://avatars.githubusercontent.com/u/68222915?v=4"
+    },
+    {
+      "author": "luhuaqin",
+      "comment": "发布评论",
+      "time": "2022/9/24 15:40:22",
+      "attitude": 0,
+      "avatar": "https://avatars.githubusercontent.com/u/87929523?v=4",
+      "id": 4
+    }
+  ]
+}
